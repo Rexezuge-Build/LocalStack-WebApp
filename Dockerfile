@@ -1,0 +1,20 @@
+FROM localstack/localstack
+
+FROM scratch
+
+COPY --from=0 / /
+
+EXPOSE 4566 4510-4559 5678
+
+HEALTHCHECK --interval=10s --start-period=15s --retries=5 --timeout=5s CMD .venv/bin/localstack status services --format=json
+
+VOLUME /var/lib/localstack
+
+ARG LOCALSTACK_BUILD_DATE
+ARG LOCALSTACK_BUILD_GIT_HASH
+ARG LOCALSTACK_BUILD_VERSION
+ENV LOCALSTACK_BUILD_DATE=${LOCALSTACK_BUILD_DATE}
+ENV LOCALSTACK_BUILD_GIT_HASH=${LOCALSTACK_BUILD_GIT_HASH}
+ENV LOCALSTACK_BUILD_VERSION=${LOCALSTACK_BUILD_VERSION}
+
+ENTRYPOINT ["docker-entrypoint.sh"]
