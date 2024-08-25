@@ -6,7 +6,9 @@ COPY --from=0 / /
 
 EXPOSE 4566 4510-4559 5678
 
-HEALTHCHECK --interval=10s --start-period=15s --retries=5 --timeout=5s CMD .venv/bin/localstack status services --format=json
+WORKDIR /opt/code/localstack/
+
+# HEALTHCHECK --interval=10s --start-period=15s --retries=5 --timeout=5s CMD .venv/bin/localstack status services --format=json
 
 VOLUME /var/lib/localstack
 
