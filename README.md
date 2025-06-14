@@ -10,7 +10,7 @@ docker run -d \
     -p 4510-4559:4510-4559 \
     --restart=unless-stopped \
     -v /var/run/docker.sock:/var/run/docker.sock \
-    -v /var/lib/localstack:LocalStack_DATA \
+    -v LocalStack_DATA:/var/lib/localstack \
     -e PERSISTENCE=1 \
     sukibijo9852/localstack:latest
 ```
