@@ -1,4 +1,4 @@
-FROM localstack/localstack
+FROM localstack/localstack:stable
 
 FROM scratch
 
