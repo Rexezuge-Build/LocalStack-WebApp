@@ -4,7 +4,7 @@ FROM scratch
 
 COPY --from=0 / /
 
-EXPOSE 4566 4510-4559 5678
+EXPOSE 4566
 
 WORKDIR /opt/code/localstack/
 
