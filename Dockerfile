@@ -12,4 +12,7 @@ WORKDIR /opt/code/localstack/
 
 # VOLUME /var/lib/localstack
 
+ENV LOCALSTACK_HOST="localhost.localstack.cloud:4566" \
+    MAIN_CONTAINER_NAME="localstack-exec"
+
 ENTRYPOINT ["docker-entrypoint.sh"]
