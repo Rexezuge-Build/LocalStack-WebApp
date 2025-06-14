@@ -14,3 +14,7 @@ docker run -d \
 ### AWS Feature Coverage
 
 https://docs.localstack.cloud/user-guide/aws/feature-coverage/
+
+### Configurations
+
+https://docs.localstack.cloud/references/configuration/
