@@ -3,14 +3,11 @@
 ### Launch Container
 
 ```
-docker volume create LocalStack_DATA
 docker run -d \
     --name LocalStack \
     -p 4566:4566 \
     --restart=unless-stopped \
     -v /var/run/docker.sock:/var/run/docker.sock \
-    -v LocalStack_DATA:/var/lib/localstack \
-    -e PERSISTENCE=1 \
     sukibijo9852/localstack:latest
 ```
 

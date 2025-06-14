@@ -10,6 +10,6 @@ WORKDIR /opt/code/localstack/
 
 # HEALTHCHECK --interval=10s --start-period=15s --retries=5 --timeout=5s CMD .venv/bin/localstack status services --format=json
 
-VOLUME /var/lib/localstack
+# VOLUME /var/lib/localstack
 
 ENTRYPOINT ["docker-entrypoint.sh"]
